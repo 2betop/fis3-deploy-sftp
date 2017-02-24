@@ -1,0 +1,26 @@
+{
+  "name": "fis3-deploy-sftp",
+  "version": "1.0.0",
+  "description": "fis3 deploy sftp plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fis",
+    "fis-plus",
+    "fis3",
+    "deploy"
+  ],
+  "author": "FIS",
+  "license": "BSD",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/2betop/fis3-deploy-sftp.git"
+  },
+  "dependencies": {
+    "prompt": "1.0.0",
+    "ssh2": "0.5.4",
+    "streamifier": "0.1.1"
+  }
+}
