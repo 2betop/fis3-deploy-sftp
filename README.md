@@ -5,21 +5,22 @@
 全局安装或者本地安装都可以。
 
 ```
-npm install fis3-deploy-http-push --save-dev
+npm install fis3-deploy-sftp --save-dev
 ```
 
 ## 使用方法
 
-也可以使用统一的 deploy 插件配置方法
+可以使用统一的 deploy 插件配置方法
 
 ```javascript
 fis.match('*.js', {
     deploy: fis.plugin('sftp', {
-        //这个参数会跟随post请求一起发送
-        to: '/home/fis/www',
+        // sftp路径
+        to: '/home/fis/www',
         
         // 参考 npm ssh2 的配置
-        user: 'xxx',
+        host: 'xxx',
+        username: 'xxx',
         password: 'xxx'
     })
 })
