@@ -91,7 +91,7 @@ function requirePassword(options, cb) {
   prompt.get({
     properties: {
       pw: {
-        description: 'password for ' + options.user + '@' + options.host,
+        description: 'password for ' + options.username + '@' + options.host,
         required: true/*,
         hidden: true*/
       }
@@ -111,8 +111,8 @@ module.exports = function(options, modified, total, callback) {
     throw new Error('options.to is required!');
   } else if (!options.host) {
     throw new Error('options.host is required!');
-  } else if (!options.user) {
-    throw new Error('options.user is required!');
+  } else if (!options.username) {
+    throw new Error('options.username is required!');
   }
 
   var steps = [];
