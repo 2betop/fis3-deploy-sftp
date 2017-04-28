@@ -6,7 +6,7 @@ var path = require('path');
 var prompt = require('prompt');
 var Client = require('ssh2').Client;
 var streamifier = require('streamifier');
-
+var mkdirp = require('mkdirp');
 
 
 function deploy(options, release, content, file, callback) {
@@ -23,7 +23,8 @@ function deploy(options, release, content, file, callback) {
       }
 
       var filepath = path.join(options.to, release);
-      sftp.mkdir(path.dirname(filepath), function(err) {
+      filepath = filepath.replace(/\\/g,'/');
+      mkdirp(path.dirname(filepath), function(err) {
         // if (err) {
         //   console.log(err, 'Mkdir failed: %s', path.dirname(filepath));
         //   return callback(err);
